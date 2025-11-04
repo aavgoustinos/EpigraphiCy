@@ -1,8 +1,4 @@
-# EpigraphiCy / Venetian Inscriptions (Developer README)
-
-A Django-based open-source platform for documenting, visualizing and publishing ancient inscriptions. Originally developed for the "Venetian Inscriptions in Cyprus" project, EpigraphiCy provides a content model for epigraphic metadata, support for multiple images and 3D models, geospatial mapping, and an administrative interface.
-
-Repository: venetianinscriptions (owner: christosfiakkou)
+# EpigraphiCy /(Developer README)
 
 ## Highlights
 
@@ -63,12 +59,12 @@ Open http://127.0.0.1:8000/ in your browser.
 
 ## Project structure (high level)
 
-- `venetianinscriptions/` - Django project package
+  - `rootfolder/` - Django project package
   - `core/` - project settings, wsgi/asgi
   - `epigraphy/` - main app: models, views, admin, migrations
   - `media/`, `static/`, `templates/` - assets and templates
-- `manage.py` - Django CLI entrypoint
-- `requirements.txt` - pinned Python dependencies
+  - `manage.py` - Django CLI entrypoint
+  - `requirements.txt` - pinned Python dependencies
 
 
 ## Tests
