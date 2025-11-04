@@ -1,0 +1,435 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block header %}
+ {{ epigraphy.place}} / {{ epigraphy.title }} 
+
+ 
+{% endblock %}
+{% block content %}
+ 
+{% if epigraphy.image_1 and epigraphy.image_1.url %}
+  <a data-fancybox="image-gallery" href="{{ epigraphy.image_1.url }}">
+    <img src="{{ epigraphy.image_1.url }}" style="max-width: 50%; height: auto;" alt="Image 1" title="Object One">
+  </a>
+{% endif %}
+<br>
+<br>
+<br>
+<div class="thumbnail-container">
+  {% if epigraphy.image_2 and epigraphy.image_2.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_2.url }}">
+      <img src="{{ epigraphy.image_2.url }}" style="width: 100px;" alt="Image 2" title="Object One">
+    </a>
+  {% endif %}
+  
+  {% if epigraphy.image_3 and epigraphy.image_3.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_3.url }}">
+      <img src="{{ epigraphy.image_3.url }}" style="width: 100px;" alt="Image 3" title="Object One">
+    </a>
+  {% endif %}
+  
+  {% if epigraphy.image_4 and epigraphy.image_4.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_4.url }}">
+        <img src="{{ epigraphy.image_4.url }}" style="width: 100px;" alt="Image 4" title="Object One">
+    </a>
+  {% endif %}
+  
+  {% if epigraphy.image_5 and epigraphy.image_5.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_5.url }}">
+       <img src="{{ epigraphy.image_5.url }}" style="width: 100px;" alt="Image 5" title="Object One">
+    </a>
+  {% endif %}
+  
+  {% if epigraphy.image_6 and epigraphy.image_6.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_6.url }}">
+        <img src="{{ epigraphy.image_6.url }}" style="width: 100px;" alt="Image 6" title="Object One">
+    </a>
+  {% endif %}
+   
+  {% if epigraphy.image_7 and epigraphy.image_7.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_7.url }}">
+        <img src="{{ epigraphy.image_7.url }}" style="width: 100px;" alt="Image 7" title="Object One">
+    </a>
+  {% endif %}
+  
+  {% if epigraphy.image_8 and epigraphy.image_8.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_8.url }}">
+        <img src="{{ epigraphy.image_8.url }}" style="width: 100px;" alt="Image 8" title="Object One">
+    </a>
+  {% endif %}
+  
+  {% if epigraphy.image_9 and epigraphy.image_9.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_9.url }}">
+        <img src="{{ epigraphy.image_9.url }}" style="width: 100px;" alt="Image 9" title="Object One">
+    </a>
+  {% endif %}
+  
+  {% if epigraphy.image_10 and epigraphy.image_10.url %}
+    <a data-fancybox="image-gallery" href="{{ epigraphy.image_10.url }}">
+        <img src="{{ epigraphy.image_10.url }}" style="width: 100px;" alt="Image 10" title="Object One">
+    </a>
+  {% endif %}
+</div>
+
+
+  
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('[data-fancybox="graffito-gallery"]').fancybox({
+      thumbs: {
+        autoStart: true,
+        axis: 'x',
+      }
+    });
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<br>
+<br>
+
+   
+ {% if epigraphy.title %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ epigraphy.title }} Information</h5>
+    <table class="table table-striped">
+      <tbody>
+      {% endif %}
+       {% if epigraphy.object_type %}
+        <tr>
+          <td><strong>Object type:</strong></td>
+          <td>{{ epigraphy.get_object_type_display }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.short_name %}
+        <tr>
+          <td><strong>Short Name:</strong></td>
+          <td>{{ epigraphy.short_name }}</td>
+        </tr>
+        {% endif %}
+        
+        
+        {% if epigraphy.type_of_writing %}
+        <tr>
+          <td><strong>Type of writing:</strong></td>
+          <td>{{ epigraphy.get_type_of_writing_display }}</td>
+        </tr>
+        {% endif %}
+        
+        
+        
+        
+        
+         {% if epigraphy.year_from %}
+        <tr>
+          <td><strong>Year From:</strong></td>
+          <td>{{ epigraphy.year_from }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.year_to %}
+        <tr>
+          <td><strong>Year To:</strong></td>
+          <td>{{ epigraphy.year_to }}</td>
+        </tr>
+        {% endif %}
+        
+         {% if epigraphy.day and epigraphy.month and epigraphy.year_from and epigraphy.year_to %}
+        <tr>
+          <td><strong>Date:</strong></td>
+          <td>{{ epigraphy.day }} {{ epigraphy.month }} {{ epigraphy.year_from }}-{{ epigraphy.year_to }}</td>
+        </tr>
+        {% endif %}
+        
+        
+    
+     {% if epigraphy.height %}
+        <tr>
+          <td><strong>Height:</strong></td>
+          <td>{{ epigraphy.height }}</td>
+        </tr>
+        {% endif %}
+    
+    
+      {% if epigraphy.width %}
+        <tr>
+          <td><strong>Width:</strong></td>
+          <td>{{ epigraphy.width }}</td>
+        </tr>
+        {% endif %}
+        
+     {% if epigraphy.depth_diameter %}
+        <tr>
+          <td><strong>Depth/Diameter:</strong></td>
+          <td>{{ epigraphy.depth_diameter }}</td>
+        </tr>
+        {% endif %}
+        
+
+        {% if epigraphy.letter_heights %}
+        <tr>
+          <td><strong>Letter Heights:</strong></td>
+          <td>{{ epigraphy.letter_heights }}</td>
+        </tr>
+        {% endif %}
+        
+         {% if epigraphy.promoter %}
+        <tr>
+          <td><strong>Promoter:</strong></td>
+          <td>{{ epigraphy.get_promoter_display }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.language %}
+        <tr>
+          <td><strong>Language:</strong></td>
+          <td>{{ epigraphy.get_language_display }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.type_of_inscription %}
+        <tr>
+          <td><strong>Type of inscription:</strong></td>
+          <td>{{ epigraphy.get_type_of_inscription_display }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.social_category %}
+        <tr>
+          <td><strong>Social category:</strong></td>
+          <td>{{ epigraphy.social_category }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.material %}
+        <tr>
+          <td><strong>Material:</strong></td>
+          <td>{{ epigraphy.get_material_display }} {% if epigraphy.specific_material %}({{epigraphy.specific_material}}){% endif %}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.administrative_district %}
+        <tr>
+          <td><strong>Administrative district:</strong></td>
+          <td>{{ epigraphy.get_administrative_district_display }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.heigth %}
+        <tr>
+          <td><strong>Height:</strong></td>
+          <td>{{ epigraphy.height }} CM</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.length %}
+        <tr>
+          <td><strong>Length:</strong></td>
+          <td>{{ epigraphy.length }} CM</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.width_diameter %}
+        <tr>
+          <td><strong>Width/diameter:</strong></td>
+          <td>{{ epigraphy.width_diameter }} CM</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.gender %}
+        <tr>
+          <td><strong>Gender:</strong></td>
+          <td>{{ epigraphy.gender }}</td>
+        </tr>
+        {% endif %}
+        
+       
+        
+        {% if epigraphy.state_of_preservation %}
+        <tr>
+          <td><strong>State of preservation:</strong></td>
+          <td>{{ epigraphy.get_state_of_preservation_display }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.motivation %}
+        <tr>
+          <td><strong>Motivation:</strong></td>
+          <td>{{ epigraphy.motivation }}</td>
+        </tr>
+        {% endif %}
+        
+       
+        
+        {% if epigraphy.past_location %}
+        <tr>
+          <td><strong>Past location:</strong></td>
+          <td>{{ epigraphy.past_location }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if epigraphy.current_location %}
+        <tr>
+          <td><strong>Current location:</strong></td>
+          <td>{{ epigraphy.current_location }}</td>
+        </tr>
+        {% endif %}
+       
+        {% if epigraphy.iconographic_elements.all %}
+        <tr>
+          <td><strong>Iconographic Elements:</strong></td>
+          <td>
+            <ul>
+              {% for x in epigraphy.iconographic_elements.all %}
+                <li>{{ x.name }}</li>
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<br>
+
+<div class="accordion" id="epigraphyAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="descriptionHeader">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#descriptionCollapse" aria-expanded="false" aria-controls="descriptionCollapse">
+        Description
+      </button>
+    </h2>
+    <div id="descriptionCollapse" class="accordion-collapse collapse" aria-labelledby="descriptionHeader" data-bs-parent="#epigraphyAccordion">
+      <div class="accordion-body">
+        {{ epigraphy.description|safe }}
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="bibliographyHeader">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bibliographyCollapse" aria-expanded="false" aria-controls="bibliographyCollapse">
+        Bibliography
+      </button>
+    </h2>
+    <div id="bibliographyCollapse" class="accordion-collapse collapse" aria-labelledby="bibliographyHeader" data-bs-parent="#epigraphyAccordion">
+      <div class="accordion-body">
+        {{ epigraphy.bibliography|safe }}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="transcriptionHeader">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#transcriptionCollapse" aria-expanded="false" aria-controls="transcriptionCollapse">
+        Transcription - Interpreted
+      </button>
+    </h2>
+    <div id="transcriptionCollapse" class="accordion-collapse collapse" aria-labelledby="transcriptionHeader" data-bs-parent="#epigraphyAccordion">
+      <div class="accordion-body">
+        {{ epigraphy.transcription_interpreted|safe }}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="transcriptionHeader">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#transcriptionCollapse" aria-expanded="false" aria-controls="transcriptionCollapse">
+       Transcription - Diplomatic
+      </button>
+    </h2>
+    <div id="transcriptionCollapse" class="accordion-collapse collapse" aria-labelledby="transcriptionHeader" data-bs-parent="#epigraphyAccordion">
+      <div class="accordion-body">
+        {{ epigraphy.transcription_diplomatic|safe }}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="translationHeader">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#translationCollapse" aria-expanded="false" aria-controls="translationCollapse">
+       Translation
+      </button>
+    </h2>
+    <div id="translationCollapse" class="accordion-collapse collapse" aria-labelledby="translationHeader" data-bs-parent="#epigraphyAccordion">
+      <div class="accordion-body">
+        {{ epigraphy.translation|safe }}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="apparatusHeader">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#apparatusCollapse" aria-expanded="false" aria-controls="apparatusCollapse">
+        Apparatus
+      </button>
+    </h2>
+    <div id="apparatusCollapse" class="accordion-collapse collapse" aria-labelledby="apparatusHeader" data-bs-parent="#epigraphyAccordion">
+      <div class="accordion-body">
+        {{ epigraphy.apparatus|safe }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div>
+  <div class="container">
+    <p>
+      {% if epigraphy.full_epidoc_xml %}
+        <a href="{{ epigraphy.full_epidoc_xml.url }}" download>
+            <button>Full Epidoc XML</button>
+        </a>
+    {% else %}
+        <p>No file uploaded yet.</p>
+    {% endif %}
+      </p>
+      
+
+    
+
+    
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+<script>
+$(document).ready(function() {
+    $("[data-fancybox]").fancybox();
+});
+</script>
+
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+ <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>

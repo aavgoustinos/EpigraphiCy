@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+{% if monuments %}
+<ul>
+    {% for monument in monuments %}
+    <li><a href="{% url 'monument_detail' monument.id %}">More</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No monuments found.</p>
+{% endif %}
+
+{% endblock %}
