@@ -25,7 +25,7 @@ date: 2025-10-30
 
 # Summary
 
-**EpigraphiCy** is an open-source framework designed for the sustainable management, visualization, and online dissemination of ancient inscriptions (Bozia et al., 2014; Barmpoutis, 2013). It enables researchers and institutions to publish 2D and 3D epigraphic data in accessible, interoperable, and reusable formats. Developed initially to support the *Venetian Inscriptions in Cyprus* project, EpigraphiCy has evolved into a general-purpose platform promoting open access, digital preservation, and knowledge sharing in the field of archaeology.
+**EpigraphiCy** is an open-source framework designed for the sustainable management, visualization, and online dissemination of ancient inscriptions (Bozia et al., 2014; Barmpoutis, 2013). It enables researchers and institutions to publish 2D and 3D epigraphic data in accessible, interoperable, and reusable formats. Developed initially to support the any online inscriptions project. EpigraphiCy has evolved into a general-purpose platform promoting open access, digital preservation, and knowledge sharing in the field of archaeology.
 
 # Statement of Need
 
