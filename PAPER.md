@@ -51,7 +51,7 @@ By combining structured metadata, geospatial visualization, and interactive 3D i
 
 # Acknowledgements
 
-We thank the research team and technical collaborators of the *Venetian Inscriptions in Cyprus* project, whose work inspired the creation of EpigraphiCy.
+We thank the research team and technical collaborators of the *APAC LABS* at The Cyprus Institute.
 
 # Conflicts of Interest
 
